@@ -13,11 +13,13 @@ Our current implementation focuses on a smaller subset keeping feasability as a 
 Multi-response linear regression using averaged GloVe word embeddings for captions mapped to VGG-19 features.
 Weighted baseline variant by averaging caption features per image.​
 
+
 ### Neural Sequence Models:
 GRU from scratch, GRU initialized with GloVe, LSTM with GloVe, and Bidirectional GRU with GloVe initialization.
 Models encode captions using PyTorch with GloVe initialization for word embeddings, joint alignment to image features.​
 
 Loss/Evaluation: Pairwise ranking loss is used, optimizing image retrieval metrics: Recall@1, Recall@10, and mean rank
+
 
 ## Results
 
