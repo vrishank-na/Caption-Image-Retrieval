@@ -9,11 +9,11 @@ Preprocessed COCO dataset (Karpathy split) containing images and five captions p
 
 Our current implementation focuses on a smaller subset keeping feasability as a requirement , for better results larger datasets should be used.
 
-#### Baselines:
+### Baselines:
 Multi-response linear regression using averaged GloVe word embeddings for captions mapped to VGG-19 features.
 Weighted baseline variant by averaging caption features per image.​
 
-#### Neural Sequence Models:
+### Neural Sequence Models:
 GRU from scratch, GRU initialized with GloVe, LSTM with GloVe, and Bidirectional GRU with GloVe initialization.
 Models encode captions using PyTorch with GloVe initialization for word embeddings, joint alignment to image features.​
 
@@ -21,7 +21,7 @@ Loss/Evaluation: Pairwise ranking loss is used, optimizing image retrieval metri
 
 ## Results
 
-#### Baseline Model results
+### Baseline Model results
 
 | Model           | Implementation          | Recall@1 (%) | Recall@10 (%) | Mean Rank |
 |-----------------|-------------------------|--------------|---------------|-----------|
@@ -31,7 +31,7 @@ Loss/Evaluation: Pairwise ranking loss is used, optimizing image retrieval metri
 | Baseline Weight | Baseline_models.ipynb   | 44.0         | 94.0          | 3.7       |
 
 
-#### Neural Sequence Model Results
+### Neural Sequence Model Results
 
 | Model            | Implementation            | Recall@1 (%) | Recall@10 (%) | Mean Rank |
 |------------------|---------------------------|--------------|---------------|-----------|
