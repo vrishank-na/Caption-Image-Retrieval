@@ -20,26 +20,27 @@ Loss/Evaluation: Pairwise ranking loss is used, optimizing image retrieval metri
 
 Results
 
-Baseline Model Results
+Baseline Model results
 
-Model            |  Implementation         |  Recall@1 (%)  |  Recall@10 (%)  |  Mean Rank
------------------+-------------------------+----------------+-----------------+-----------
-Baseline         |  Original Paper         |  10.3          |  17.1           |  176.1    
-Baseline         |  Baseline_models.ipynb  |  36.2          |  90.4           |  4.7      
-Baseline Weight  |  Original Paper         |  19.8          |  65.5           |  10.5     
-Baseline Weight  |  Baseline_models.ipynb  |  44.0          |  94.0           |  3.7      
+| Model           | Implementation          | Recall@1 (%) | Recall@10 (%) | Mean Rank |
+|-----------------|-------------------------|--------------|---------------|-----------|
+| Baseline        | Original Paper          | 10.3         | 17.1          | 176.1     |
+| Baseline        | Baseline_models.ipynb   | 36.2         | 90.4          | 4.7       |
+| Baseline Weight | Original Paper          | 19.8         | 65.5          | 10.5      |
+| Baseline Weight | Baseline_models.ipynb   | 44.0         | 94.0          | 3.7       |
 
 
 Neural Sequence Model Results
 
-Model             |  Implementation           |  Recall@1 (%)  |  Recall@10 (%)  |  Mean Rank
-------------------+---------------------------+----------------+-----------------+-----------
-GRU from scratch  |  seq_neural_models.ipynb  |  0.1           |  0.6            |  508.1    
-GRU + GloVe       |  Original Paper           |  37.0          |  86.8           |  7.3      
-GRU + GloVe       |  seq_neural_models.ipynb  |  0.2           |  0.7            |  504.3    
-LSTM + GloVe      |  Original Paper           |  35.4          |  86.2           |  7.5      
-LSTM + GloVe      |  seq_neural_models.ipynb  |  0.2           |  0.7            |  512.7    
-BiGRU + GloVe     |  seq_neural_models.ipynb  |  0.1           |  0.6            |  509.4    
+| Model            | Implementation            | Recall@1 (%) | Recall@10 (%) | Mean Rank |
+|------------------|---------------------------|--------------|---------------|-----------|
+| GRU from scratch | seq_neural_models.ipynb   | 0.1          | 0.6           | 508.1     |
+| GRU + GloVe      | Original Paper            | 37.0         | 86.8          | 7.3       |
+| GRU + GloVe      | seq_neural_models.ipynb   | 0.2          | 0.7           | 504.3     |
+| LSTM + GloVe     | Original Paper            | 35.4         | 86.2          | 7.5       |
+| LSTM + GloVe     | seq_neural_models.ipynb   | 0.2          | 0.7           | 512.7     |
+| BiGRU + GloVe    | seq_neural_models.ipynb   | 0.1          | 0.6           | 509.4     |
+
 
 How to Run
 1. Baseline_models.ipynb: The baseline and the baseline weight models are trained in this ipynb file.
