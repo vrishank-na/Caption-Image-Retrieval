@@ -1,26 +1,26 @@
 # Caption-Image-Retrieval
 
-Overview
+### Overview
 This machine learning project explores the task of image-caption retrieval using the COCO Common Objects in Context dataset, where each image is annotated with multiple human-written captions. The main goal is to align embeddings of captions and images such that, given a caption, the model retrieves the most semantically relevant image from the dataset.​
 
-Methods
+### Methods
 Dataset: Preprocessed COCO dataset (Karpathy split) containing images and five captions per image; extracted VGG-19 image features are used for training.​
 
 Our current implementation focuses on a smaller subset keeping feasability as a requirement , for better results larger datasets should be used.
 
-Baselines:
+#### Baselines:
 Multi-response linear regression using averaged GloVe word embeddings for captions mapped to VGG-19 features.
 Weighted baseline variant by averaging caption features per image.​
 
-Neural Sequence Models:
+#### Neural Sequence Models:
 GRU from scratch, GRU initialized with GloVe, LSTM with GloVe, and Bidirectional GRU with GloVe initialization.
 Models encode captions using PyTorch with GloVe initialization for word embeddings, joint alignment to image features.​
 
 Loss/Evaluation: Pairwise ranking loss is used, optimizing image retrieval metrics: Recall@1, Recall@10, and mean rank
 
-Results
+### Results
 
-Baseline Model results
+#### Baseline Model results
 
 | Model           | Implementation          | Recall@1 (%) | Recall@10 (%) | Mean Rank |
 |-----------------|-------------------------|--------------|---------------|-----------|
@@ -30,7 +30,7 @@ Baseline Model results
 | Baseline Weight | Baseline_models.ipynb   | 44.0         | 94.0          | 3.7       |
 
 
-Neural Sequence Model Results
+#### Neural Sequence Model Results
 
 | Model            | Implementation            | Recall@1 (%) | Recall@10 (%) | Mean Rank |
 |------------------|---------------------------|--------------|---------------|-----------|
@@ -42,14 +42,14 @@ Neural Sequence Model Results
 | BiGRU + GloVe    | seq_neural_models.ipynb   | 0.1          | 0.6           | 509.4     |
 
 
-How to Run
+## How to Run
 1. Baseline_models.ipynb: The baseline and the baseline weight models are trained in this ipynb file.
 
 2. seq_neural_models.ipynb: The implementations of the neural models is done in this ipynb file.
 
 The datasets in both the ipynb files are inbuilt.
 
-Resources:
+## Resources:
 
 Reference Paper: https://cs229.stanford.edu/proj2018/report/59.pdf
 
