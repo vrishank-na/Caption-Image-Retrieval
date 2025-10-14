@@ -4,7 +4,7 @@
 This machine learning project explores the task of image-caption retrieval using the COCO Common Objects in Context dataset, where each image is annotated with multiple human-written captions. The main goal is to align embeddings of captions and images such that, given a caption, the model retrieves the most semantically relevant image from the dataset.​
 
 ## Methods
-#### Dataset: 
+### Dataset: 
 Preprocessed COCO dataset (Karpathy split) containing images and five captions per image; extracted VGG-19 image features are used for training.​
 
 Our current implementation focuses on a smaller subset keeping feasability as a requirement , for better results larger datasets should be used.
