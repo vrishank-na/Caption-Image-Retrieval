@@ -7,7 +7,7 @@ This machine learning project explores the task of image-caption retrieval using
 ### Dataset: 
 Preprocessed COCO dataset (Karpathy split) containing images and five captions per image; extracted VGG-19 image features are used for training.​
 
-Our current implementation focuses on a smaller subset keeping feasability as a requirement , for better results larger datasets should be used.
+Our current implementation focuses on a smaller subset keeping feasability as a requirement; both notebooks currently utilize a subset of 5,000 samples for training/validation/testing. For better results comparable to the original paper, the full dataset should be used.
 
 ### Baselines:
 Multi-response linear regression using averaged GloVe word embeddings for captions mapped to VGG-19 features.
@@ -25,25 +25,23 @@ Loss/Evaluation: Pairwise ranking loss is used, optimizing image retrieval metri
 
 ### Baseline Model results
 
-| Model           | Implementation          | Recall@1 (%) | Recall@10 (%) | Mean Rank |
-|-----------------|-------------------------|--------------|---------------|-----------|
-| Baseline        | Original Paper          | 10.3         | 17.1          | 176.1     |
-| Baseline        | Baseline_models.ipynb   | 36.2         | 90.4          | 4.7       |
-| Baseline Weight | Original Paper          | 19.8         | 65.5          | 10.5      |
-| Baseline Weight | Baseline_models.ipynb   | 44.0         | 94.0          | 3.7       |
-
+| Model             | Implementation         | Recall@1 (%) | Recall@10 (%) | Mean Rank |
+| :---------------- | :--------------------- | :----------- | :------------ | :-------- |
+| Baseline          | Original Paper         | 10.3        | 17.1         | 176.1    |
+| Baseline          | Baseline\_models.ipynb | **41.4**   | **89.6**    | **4.4**     |
+| Baseline + Weight | Original Paper         | 19.8        | 65.5         | 10.5     |
+| Baseline + Weight | Baseline\_models.ipynb | **47.0**   | **95.0**    | **3.2**     |
 
 ### Neural Sequence Model Results
 
-| Model            | Implementation            | Recall@1 (%) | Recall@10 (%) | Mean Rank |
-|------------------|---------------------------|--------------|---------------|-----------|
-| GRU from scratch | seq_neural_models.ipynb   | 0.1          | 0.6           | 508.1     |
-| GRU + GloVe      | Original Paper            | 37.0         | 86.8          | 7.3       |
-| GRU + GloVe      | seq_neural_models.ipynb   | 0.2          | 0.7           | 504.3     |
-| LSTM + GloVe     | Original Paper            | 35.4         | 86.2          | 7.5       |
-| LSTM + GloVe     | seq_neural_models.ipynb   | 0.2          | 0.7           | 512.7     |
-| BiGRU + GloVe    | seq_neural_models.ipynb   | 0.1          | 0.6           | 509.4     |
-
+| Model              | Implementation          | Recall@1 (%) | Recall@10 (%) | Mean Rank |
+| :----------------- | :---------------------- | :----------- | :------------ | :-------- |
+| GRU (from scratch) | seq\_neural\_models.ipynb | **0.2**     | **1.2**       | **504.7**   |
+| GRU + GloVe        | Original Paper          | 37.0        | 86.8         | 7.3      |
+| GRU + GloVe        | seq\_neural\_models.ipynb | **0.1**     | **1.2**       | **507.2**   |
+| LSTM + GloVe       | Original Paper          | 35.4        | 86.2         | 7.5      |
+| LSTM + GloVe       | seq\_neural\_models.ipynb | **0.1**     | **1.0**       | **520.2**   |
+| BiGRU + GloVe      | seq\_neural\_models.ipynb | **0.2**     | **1.0**       | **507.7**   |
 
 ## How to Run
 1. Baseline_models.ipynb: The baseline and the baseline weight models are trained in this ipynb file.
